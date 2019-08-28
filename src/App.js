@@ -2,6 +2,7 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import List from './List'
+import Finished from './Finished'
 
 class App extends React.Component {
   state={taskArray: [], completedTaskArray: []}
@@ -10,20 +11,18 @@ class App extends React.Component {
     fetch("http://localhost:3000/tasks")
     .then(response=> response.json())
     .then(data=> {
-       this.completed(data)
-       this.todo(data)
+      data.map(this.taskSeparator)
     })
   }
 
-  completed = (data) => {
-   let tasks = data.filter(data => data.complete === true)
-   this.setState({completedTaskArray: tasks})
+  taskSeparator = (data) => {
+    if (data.complete){
+      this.setState({ taskArray: [...this.state.taskArray, data]})
+    } else {
+      this.setState({ completedTaskArray: [...this.state.completedTaskArray, data]})
+    }
   }
 
-  todo = (data) => {
-   let tasks = data.filter(data => data.complete === false)
-   this.setState({taskArray: tasks})
-  }
 
   handleClick= (taskObj)=> {
     // console.log(this.setState({complete: !taskObj.complete}))
@@ -40,12 +39,12 @@ class App extends React.Component {
         })
     })
     .then(response=> response.json())
-    .then(data=> {
-      // console.log([...this.state.completedTaskArray,2,3,4])
-
-      this.completed([...this.state.completedTaskArray,data])
-      this.todo(this.state.taskArray)
+    .then(data => {
+        this.setState({taskArray: this.state.taskArray.filter(x => x.title !== data.title)})
+        this.setState({completedTaskArray: this.state.completedTaskArray.filter(x => x.title !== data.title)})
+        this.taskSeparator(data)
     })
+
   }
 
 
@@ -54,6 +53,7 @@ render(){
   return (
     <div className="App">
         <List list={this.state.taskArray} clicked={this.handleClick}/>
+        <Finished list={this.state.completedTaskArray} clicked={this.handleClick}/>
     </div>
   );
 }

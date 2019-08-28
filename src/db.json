@@ -4,31 +4,31 @@
       "id": 1,
       "title": "finish",
       "description": "finish the project",
-      "complete": false
+      "complete": true
     },
     {
       "id": 2,
       "title": "lunch",
       "description": "stuff face",
-      "complete": false
+      "complete": true
     },
     {
       "id": 3,
       "title": "help",
       "description": "ask Jeff and Brianna for halp",
-      "complete": true
+      "complete": false
     },
     {
       "id": 4,
       "title": "sleep",
       "description": "ZZZZZZZZZZZZZZZ",
-      "complete": true
+      "complete": false
     },
     {
       "id": 5,
       "title": "beef",
       "description": "steaky steak",
-      "complete": true
+      "complete": false
     }
   ]
 }
