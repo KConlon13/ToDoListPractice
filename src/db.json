@@ -1,0 +1,34 @@
+{
+  "tasks": [
+    {
+      "id": 1,
+      "title": "finish",
+      "description": "finish the project",
+      "complete": false
+    },
+    {
+      "id": 2,
+      "title": "lunch",
+      "description": "stuff face",
+      "complete": false
+    },
+    {
+      "id": 3,
+      "title": "help",
+      "description": "ask Jeff and Brianna for halp",
+      "complete": true
+    },
+    {
+      "id": 4,
+      "title": "sleep",
+      "description": "ZZZZZZZZZZZZZZZ",
+      "complete": true
+    },
+    {
+      "id": 5,
+      "title": "beef",
+      "description": "steaky steak",
+      "complete": true
+    }
+  ]
+}
