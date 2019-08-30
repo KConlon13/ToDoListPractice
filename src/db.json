@@ -10,7 +10,7 @@
       "id": 2,
       "title": "lunch",
       "description": "stuff face",
-      "complete": true
+      "complete": false
     },
     {
       "id": 3,
@@ -22,13 +22,13 @@
       "id": 4,
       "title": "sleep",
       "description": "ZZZZZZZZZZZZZZZ",
-      "complete": false
+      "complete": true
     },
     {
       "id": 5,
       "title": "beef",
       "description": "steaky steak",
-      "complete": false
+      "complete": true
     }
   ]
 }
